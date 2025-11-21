@@ -1,0 +1,35 @@
+[project]
+name = "bach-crypto_news51"
+version = "1.0.0"
+description = "RapidAPI: apiwizard/crypto-news51"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp>=2.0.0",
+    "httpx>=0.25.0",
+]
+
+[project.scripts]
+bach_crypto_news51 = "server:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/bachstudio/bach-crypto_news51"
+Repository = "https://github.com/bachstudio/bach-crypto_news51"
+Documentation = "https://github.com/bachstudio/bach-crypto_news51#readme"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[tool.hatch.version]
+path = "server.py"
+pattern = '__version__ = "(?P<version>[^"]+)"'
